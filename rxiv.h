@@ -89,6 +89,7 @@ typedef enum {
 typedef enum {
 	SCALE_DOWN,
 	SCALE_FIT,
+	SCALE_FILL,
 	SCALE_WIDTH,
 	SCALE_HEIGHT,
 	SCALE_ZOOM
