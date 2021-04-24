@@ -1,0 +1,25 @@
+#!/bin/sh
+get_image(){
+for i in "$@"; do
+    name=$(echo "$i" | sed "s/.*\///")
+    curl -sL "$i" > "/tmp/${name}"
+    files=$files" /tmp/${name}"
+done
+}
+case "$1" in
+    -*)
+        args=${1}
+        shift 1
+        # shellcheck disable=2086
+        get_image "$@" &&  sxiv $args $files
+    ;;
+
+    *http*)
+        # shellcheck disable=2086
+        get_image &&  sxiv $files
+    ;;
+
+    *)
+        printf "error no url nor option\\n" ; exit 1
+    ;;
+esac
