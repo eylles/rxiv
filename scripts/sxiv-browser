@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob
+imageFile="${*: -1}"
+
+args="${*:1:$# - 1}"
+if [[ ! -f "$imageFile" ]]; then
+    # shellcheck disable=2059
+    printf "$0: last argument is not a file\\n usage: sxiv-browser [-abBcfhioOpqrtvZ] [-A FRAMERATE] [-e WID] [-G GAMMA] [-g GEOMETRY] [-N NAME] [-n NUM] [-S DELAY] [-s MODE] [-z ZOOM] FILE\\n" >&2
+    exit 1
+fi
+
+file=$(basename -- "$imageFile")
+dir=$(dirname -- "$imageFile")
+arr=()
+shift
+
+cd -- "$dir" || exit 1
+
+for i in *; do
+    [[ -f $i ]] || continue
+    arr+=("$i")
+    [[ $i == "$file" ]] && c=$((${#arr[@]} - 1))
+done
+
+# shellcheck disable=2086
+exec sxiv $args -- "${arr[@]:c}" "${arr[@]:0:c}"
