@@ -93,6 +93,8 @@ on GitHub or get a copy using git with the following command:
     git clone https://github.com/eylles/sxiv.git
 
 **Stable releases**
+
+
 **[v26](https://github.com/eylles/sxiv/archive/v27.tar.gz)**
 *(April 24, 2021)*
   * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
