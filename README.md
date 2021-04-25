@@ -44,6 +44,7 @@ sxiv requires the following software to be installed:
   * Xft
   * freetype2
   * fontconfig
+  * librsvg2
   * giflib (optional, disabled with `HAVE_GIFLIB=0`)
   * libexif (optional, disabled with `HAVE_LIBEXIF=0`)
 
@@ -94,9 +95,9 @@ on GitHub or get a copy using git with the following command:
 
 **Stable releases**
 
+**rxiv**
 
-v27
-*(April 24, 2021)*
+*(Apri, 2021)*
   * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
   * Option to swap bar colors #[392](https://github.com/muennich/sxiv/pull/392) flag set to `-B`
   * Add support for animated WebP images #[437](https://github.com/muennich/sxiv/pull/437)
@@ -106,6 +107,9 @@ v27
   * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405) flag `-O`
   * added script sxiv-url to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
   * added script sxiv-browser to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
+  * added svg support (no thumbnail mode yet) #[440](https://github.com/muennich/sxiv/pull/440)
+
+**sxiv**
 
 **[v26](https://github.com/muennich/sxiv/archive/v26.tar.gz)**
 *(January 16, 2020)*
