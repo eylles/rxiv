@@ -80,19 +80,30 @@ the following command:
 Usage
 -----
 
-Please see the [man page](http://muennich.github.com/sxiv/sxiv.1.html) for
+Please see the [man page](http://eylles.github.com/sxiv/sxiv.1) for
 information on how to use sxiv.
 
 
 Download & Changelog
 --------------------
 
-You can [browse](https://github.com/muennich/sxiv) the source code repository
+You can [browse](https://github.com/eylles/sxiv) the source code repository
 on GitHub or get a copy using git with the following command:
 
-    git clone https://github.com/muennich/sxiv.git
+    git clone https://github.com/eylles/sxiv.git
 
 **Stable releases**
+**[v26](https://github.com/eylles/sxiv/archive/v27.tar.gz)**
+*(April 24, 2021)*
+  * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
+  * Option to swap bar colors #[392](https://github.com/muennich/sxiv/pull/392) flag set to `-B`
+  * Add support for animated WebP images #[437](https://github.com/muennich/sxiv/pull/437)
+  * Update manpage for marking commands #[404](https://github.com/muennich/sxiv/pull/404)
+  * Added ICCCM WM_HINTS #[406](https://github.com/muennich/sxiv/pull/406)
+  * Advertise Webp support in desktop file #[411](https://github.com/muennich/sxiv/pull/411)
+  * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405)
+  * added script sxiv-url to view files from URLs
+  * added script sxiv-browser to view all files of directory starting from file
 
 **[v26](https://github.com/muennich/sxiv/archive/v26.tar.gz)**
 *(January 16, 2020)*
