@@ -95,7 +95,7 @@ on GitHub or get a copy using git with the following command:
 **Stable releases**
 
 
-**[v27](https://github.com/eylles/sxiv/archive/v27.tar.gz)**
+v27
 *(April 24, 2021)*
   * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
   * Option to swap bar colors #[392](https://github.com/muennich/sxiv/pull/392) flag set to `-B`
