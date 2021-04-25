@@ -30,6 +30,7 @@ Screenshots
 **Thumbnail mode:**
 
 ![Thumb](https://github.com/eylles/sxiv/blob/master/img/thumb.png "Thumb mode")
+
 showcasing the optional inverted bar colors with flag `-B`
 
 
