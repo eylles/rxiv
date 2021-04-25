@@ -16,7 +16,7 @@ case "$1" in
 
     *http*)
         # shellcheck disable=2086
-        get_image &&  sxiv $files
+        get_image "$@" &&  sxiv $files
     ;;
 
     *)
