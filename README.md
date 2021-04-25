@@ -1,4 +1,4 @@
-![sxiv](http://muennich.github.com/sxiv/img/logo.png "sxiv")
+![sxiv](https://github.com/eylles/sxiv/blob/master/icon/128x128.png "sxiv")
 
 **Simple X Image Viewer**
 
@@ -25,11 +25,12 @@ Screenshots
 
 **Image mode:**
 
-![Image](http://muennich.github.com/sxiv/img/image.png "Image mode")
+![Image](https://github.com/eylles/sxiv/blob/master/img/image.png "Image mode")
 
 **Thumbnail mode:**
 
-![Thumb](http://muennich.github.com/sxiv/img/thumb.png "Thumb mode")
+![Thumb](https://github.com/eylles/sxiv/blob/master/img/thumb.png "Thumb mode")
+showcasing the optional inverted bar colors with flag `-B`
 
 
 Dependencies
@@ -241,4 +242,3 @@ on GitHub or get a copy using git with the following command:
 *(January 21, 2011)*
 
   * Initial release
-
