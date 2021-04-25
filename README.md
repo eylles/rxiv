@@ -103,9 +103,9 @@ on GitHub or get a copy using git with the following command:
   * Update manpage for marking commands #[404](https://github.com/muennich/sxiv/pull/404)
   * Added ICCCM WM_HINTS #[406](https://github.com/muennich/sxiv/pull/406)
   * Advertise Webp support in desktop file #[411](https://github.com/muennich/sxiv/pull/411)
-  * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405)
-  * added script sxiv-url to view files from URLs
-  * added script sxiv-browser to view all files of directory starting from file
+  * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405) flag `-O`
+  * added script sxiv-url to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
+  * added script sxiv-browser to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
 
 **[v26](https://github.com/muennich/sxiv/archive/v26.tar.gz)**
 *(January 16, 2020)*
