@@ -37,18 +37,18 @@ ldlibs = $(LDLIBS) -lImlib2 -lX11 -lXft -lfontconfig \
 objs = autoreload_$(AUTORELOAD).o commands.o image.o main.o options.o \
   thumbs.o util.o window.o
 
-all: sxiv
+all: rxiv
 
 .PHONY: all clean install uninstall
 .SUFFIXES:
 .SUFFIXES: .c .o
 $(V).SILENT:
 
-sxiv: $(objs)
+rxiv: $(objs)
 	@echo "LINK $@"
 	$(CC) $(LDFLAGS) -o $@ $(objs) $(ldlibs) $(cflags)
 
-$(objs): Makefile sxiv.h commands.lst config.h
+$(objs): Makefile rxiv.h commands.lst config.h
 options.o: version.h
 window.o: icon/data.h
 
@@ -68,33 +68,39 @@ version.h: Makefile .git/index
 .git/index:
 
 clean:
-	rm -f *.o sxiv
+	rm -f *.o rxiv
 
 install: all
-	@echo "INSTALL bin/sxiv"
+	@echo "INSTALL bin/rxiv"
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp sxiv $(DESTDIR)$(PREFIX)/bin/
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/sxiv
-	cp scripts/sxiv-url $(DESTDIR)$(PREFIX)/bin/
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/sxiv-url
-	cp scripts/sxiv-browser $(DESTDIR)$(PREFIX)/bin/
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/sxiv-browser
-	@echo "INSTALL sxiv.1"
+	cp rxiv $(DESTDIR)$(PREFIX)/bin/
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/rxiv
+	@echo "INSTALL bin/rxiv-url"
+	cp scripts/rxiv-url $(DESTDIR)$(PREFIX)/bin/
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/rxiv-url
+	@echo "INSTALL bin/rxiv-browser"
+	cp scripts/rxiv-browser $(DESTDIR)$(PREFIX)/bin/
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/rxiv-browser
+	cp rxiv.desktop /usr/share/applications/
+	@echo "INSTALL rxiv.1"
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
-	sed "s!PREFIX!$(PREFIX)!g; s!VERSION!$(version)!g" sxiv.1 \
-		>$(DESTDIR)$(MANPREFIX)/man1/sxiv.1
-	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/sxiv.1
-	@echo "INSTALL share/sxiv/"
-	mkdir -p $(DESTDIR)$(PREFIX)/share/sxiv/exec
-	cp exec/* $(DESTDIR)$(PREFIX)/share/sxiv/exec/
-	chmod 755 $(DESTDIR)$(PREFIX)/share/sxiv/exec/*
+	sed "s!PREFIX!$(PREFIX)!g; s!VERSION!$(version)!g" rxiv.1 \
+		>$(DESTDIR)$(MANPREFIX)/man1/rxiv.1
+	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/rxiv.1
+	@echo "INSTALL share/rxiv/"
+	mkdir -p $(DESTDIR)$(PREFIX)/share/rxiv/exec
+	cp exec/* $(DESTDIR)$(PREFIX)/share/rxiv/exec/
+	chmod 755 $(DESTDIR)$(PREFIX)/share/rxiv/exec/*
+	$(MAKE) -C icon/ install
 
 uninstall:
-	@echo "REMOVE bin/sxiv"
-	rm -f $(DESTDIR)$(PREFIX)/bin/sxiv
-	rm -f $(DESTDIR)$(PREFIX)/bin/sxiv-url
-	rm -f $(DESTDIR)$(PREFIX)/bin/sxiv-browser
-	@echo "REMOVE sxiv.1"
-	rm -f $(DESTDIR)$(MANPREFIX)/man1/sxiv.1
-	@echo "REMOVE share/sxiv/"
-	rm -rf $(DESTDIR)$(PREFIX)/share/sxiv
+	@echo "REMOVE bin/rxiv"
+	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv
+	@echo "REMOVE bin/rxiv-url"
+	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv-url
+	@echo "REMOVE bin/rxiv-browser"
+	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv-browser
+	@echo "REMOVE rxiv.1"
+	rm -f $(DESTDIR)$(MANPREFIX)/man1/rxiv.1
+	@echo "REMOVE share/rxiv/"
+	rm -rf $(DESTDIR)$(PREFIX)/share/rxiv

@@ -1,22 +1,22 @@
 /* Copyright 2011, 2012, 2014 Bert Muennich
  *
- * This file is part of sxiv.
+ * This file is part of rxiv.
  *
- * sxiv is free software; you can redistribute it and/or modify
+ * rxiv is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 2 of the License,
  * or (at your option) any later version.
  *
- * sxiv is distributed in the hope that it will be useful,
+ * rxiv is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with sxiv.  If not, see <http://www.gnu.org/licenses/>.
+ * along with rxiv.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "sxiv.h"
+#include "rxiv.h"
 #define _IMAGE_CONFIG
 #include "config.h"
 
@@ -241,7 +241,7 @@ bool cg_navigate_marked(arg_t n)
 {
 	int d, i;
 	int new = fileidx;
-	
+
 	if (prefix > 0)
 		n *= prefix;
 	d = n > 0 ? 1 : -1;
@@ -345,7 +345,7 @@ bool ci_drag(arg_t mode)
 
 	if ((int)(img.w * img.zoom) <= win.w && (int)(img.h * img.zoom) <= win.h)
 		return false;
-	
+
 	win_set_cursor(&win, CURSOR_DRAG);
 
 	win_cursor_pos(&win, &x, &y);
@@ -457,4 +457,3 @@ bool ct_reload_all(arg_t _)
 const cmd_t cmds[CMD_COUNT] = {
 #include "commands.lst"
 };
-
