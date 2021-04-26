@@ -18,7 +18,7 @@ shift
 cd -- "$dir" || exit 1
 
 for i in *; do
-    [[ -f $i ]] || continue
+    [[ $i =~ ^(.+)(\.(jpe?g|png|gif|bmp|xpm|tiff|webp|svg|JPE?G|PNG|GIF|BMP|XPM|TIFF|WEBP|SVG))$ ]] || continue
     arr+=("$i")
     [[ $i == "$file" ]] && c=$((${#arr[@]} - 1))
 done
