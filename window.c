@@ -1,22 +1,22 @@
 /* Copyright 2011-2013 Bert Muennich
  *
- * This file is part of sxiv.
+ * This file is part of rxiv.
  *
- * sxiv is free software; you can redistribute it and/or modify
+ * rxiv is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published
  * by the Free Software Foundation; either version 2 of the License,
  * or (at your option) any later version.
  *
- * sxiv is distributed in the hope that it will be useful,
+ * rxiv is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with sxiv.  If not, see <http://www.gnu.org/licenses/>.
+ * along with rxiv.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "sxiv.h"
+#include "rxiv.h"
 #define _WINDOW_CONFIG
 #include "config.h"
 #include "icon/data.h"
@@ -30,7 +30,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xresource.h>
 
-#define RES_CLASS "Sxiv"
+#define RES_CLASS "Rxiv"
 
 enum {
 	H_TEXT_PAD = 5,
@@ -259,10 +259,10 @@ void win_open(win_t *win)
 	}
 	free(icon_data);
 
-	win_set_title(win, "sxiv");
+	win_set_title(win, "rxiv");
 
 	classhint.res_class = RES_CLASS;
-	classhint.res_name = options->res_name != NULL ? options->res_name : "sxiv";
+	classhint.res_name = options->res_name != NULL ? options->res_name : "rxiv";
 	XSetClassHint(e->dpy, win->xwin, &classhint);
 
 	XSetWMProtocols(e->dpy, win->xwin, &atoms[ATOM_WM_DELETE_WINDOW], 1);
@@ -506,4 +506,3 @@ void win_cursor_pos(win_t *win, int *x, int *y)
 	if (!XQueryPointer(win->env.dpy, win->xwin, &w, &w, &i, &i, x, y, &ui))
 		*x = *y = 0;
 }
-

@@ -7,6 +7,6 @@ install:
 	for f in $(ICONS); do \
 		dir="$(DESTDIR)$(PREFIX)/share/icons/hicolor/$${f%.png}/apps"; \
 		mkdir -p "$$dir"; \
-		cp "$$f" "$$dir/sxiv.png"; \
-		chmod 644 "$$dir/sxiv.png"; \
+		cp "$$f" "$$dir/rxiv.png"; \
+		chmod 644 "$$dir/rxiv.png"; \
 	done

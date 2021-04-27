@@ -11,12 +11,12 @@ case "$1" in
         args=${1}
         shift 1
         # shellcheck disable=2086
-        get_image "$@" &&  sxiv $args $files
+        get_image "$@" &&  rxiv $args $files
     ;;
 
     *http*)
         # shellcheck disable=2086
-        get_image "$@" &&  sxiv $files
+        get_image "$@" &&  rxiv $files
     ;;
 
     *)

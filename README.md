@@ -1,8 +1,8 @@
-![sxiv](https://github.com/eylles/sxiv/blob/master/icon/128x128.png "sxiv")
+![rxiv](https://github.com/eylles/rxiv/blob/master/icon/128x128.png "sxiv")
 
-**Simple X Image Viewer**
+**Reisen X Image Viewer**
 
-The sole purpose of sxiv is to be the perfect image viewer for me. It is free
+The sole purpose of rxiv is to be the perfect image viewer for me. It is free
 software so that you can use it and modify it for your needs. Please file a bug
 report if something does not work as documented or expected. Contributions are
 welcome but there is no guarantee that they will be incorporated.
@@ -25,11 +25,11 @@ Screenshots
 
 **Image mode:**
 
-![Image](https://github.com/eylles/sxiv/blob/master/img/image.png "Image mode")
+![Image](https://github.com/eylles/rxiv/blob/master/img/image.png "Image mode")
 
 **Thumbnail mode:**
 
-![Thumb](https://github.com/eylles/sxiv/blob/master/img/thumb.png "Thumb mode")
+![Thumb](https://github.com/eylles/rxiv/blob/master/img/thumb.png "Thumb mode")
 
 showcasing the optional inverted bar colors with flag `-B`
 
@@ -49,28 +49,28 @@ sxiv requires the following software to be installed:
   * libexif (optional, disabled with `HAVE_LIBEXIF=0`)
 
 Please make sure to install the corresponding development packages in case that
-you want to build sxiv on a distribution with separate runtime and development
+you want to build rxiv on a distribution with separate runtime and development
 packages (e.g. *-dev on Debian).
 
 
 Building
 --------
 
-sxiv is built using the commands:
+rxiv is built using the commands:
 
     $ make
     # make install
 
 Please note, that the latter one requires root privileges.
 By default, sxiv is installed using the prefix "/usr/local", so the full path
-of the executable will be "/usr/local/bin/sxiv".
+of the executable will be "/usr/local/bin/rxiv".
 
 You can install sxiv into a directory of your choice by changing the second
 command to:
 
     # make PREFIX="/your/dir" install
 
-The build-time specific settings of sxiv can be found in the file *config.h*.
+The build-time specific settings of rxiv can be found in the file *config.h*.
 Please check and change them, so that they fit your needs.
 If the file *config.h* does not already exist, then you have to create it with
 the following command:
@@ -88,16 +88,16 @@ information on how to use sxiv.
 Download & Changelog
 --------------------
 
-You can [browse](https://github.com/eylles/sxiv) the source code repository
+You can [browse](https://github.com/eylles/rxiv) the source code repository
 on GitHub or get a copy using git with the following command:
 
-    git clone https://github.com/eylles/sxiv.git
+    git clone https://github.com/eylles/rxiv.git
 
 **Stable releases**
 
 **rxiv**
 
-*(Apri, 2021)*
+*(April, 2021)*
   * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
   * Option to swap bar colors #[392](https://github.com/muennich/sxiv/pull/392) flag set to `-B`
   * Add support for animated WebP images #[437](https://github.com/muennich/sxiv/pull/437)
@@ -105,9 +105,10 @@ on GitHub or get a copy using git with the following command:
   * Added ICCCM WM_HINTS #[406](https://github.com/muennich/sxiv/pull/406)
   * Advertise Webp support in desktop file #[411](https://github.com/muennich/sxiv/pull/411)
   * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405) flag `-O`
-  * added script sxiv-url to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
-  * added script sxiv-browser to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
+  * added script rxiv-url to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
+  * added script rxiv-browser to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
   * added svg support (no thumbnail mode yet) #[440](https://github.com/muennich/sxiv/pull/440)
+  * rename to rxiv
 
 **sxiv**
 
