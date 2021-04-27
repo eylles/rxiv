@@ -2,11 +2,9 @@
 
 **Reisen X Image Viewer**
 
-The sole purpose of rxiv is to be the perfect image viewer for me. It is free
-software so that you can use it and modify it for your needs. Please file a bug
-report if something does not work as documented or expected. Contributions are
-welcome but there is no guarantee that they will be incorporated.
+The sole purpose of rxiv is because sxiv won't add many sensible features and overall a strict suckless philosophy limits software extensibility.
 
+Reisen X Image Viewer is named after Reisen Udongein Inaba from Touhou.
 
 Features
 --------
@@ -17,6 +15,9 @@ Features
 * Ability to cache thumbnails for fast re-loading
 * Basic support for multi-frame images
 * Load all frames from GIF files and play GIF animations
+* Full webp support
+* View images from URL (through an included wrapper for now)
+* Partial svg support (only on image mode for now)
 * Display image information in status bar
 
 
@@ -81,7 +82,7 @@ the following command:
 Usage
 -----
 
-Please see the [man page](http://eylles.github.com/sxiv/sxiv.1) for
+Please see the [man page](http://eylles.github.com/rxiv/rxiv.1) for
 information on how to use sxiv.
 
 
@@ -93,10 +94,18 @@ on GitHub or get a copy using git with the following command:
 
     git clone https://github.com/eylles/rxiv.git
 
+
+**Contribution**
+------------
+
+Only Pull Requests from topic branches will be accepted, please **DO NOT** open a PR from **your** master branch.
+
+
 **Stable releases**
 
 **rxiv**
 
+**[v0.0.0](https://github.com/eylles/rxiv/archive/v0.0.0.tar.gz)**
 *(April, 2021)*
   * Set the _NET_WM_PID and WM_CLIENT_MACHINE X properties #[403](https://github.com/muennich/sxiv/pull/403)
   * Option to swap bar colors #[392](https://github.com/muennich/sxiv/pull/392) flag set to `-B`
