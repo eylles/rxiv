@@ -16,7 +16,8 @@ Features
 * Basic support for multi-frame images
 * Load all frames from GIF files and play GIF animations
 * Full webp support
-* View images from URL (through an included wrapper for now)
+* View images from URL (through included wrapper `rxiv-url` for now)
+* Start from file (through included wrapper `rxiv-browser` for now)
 * Partial svg support (only on image mode for now)
 * Display image information in status bar
 
@@ -82,7 +83,7 @@ the following command:
 Usage
 -----
 
-Please see the [man page](http://eylles.github.com/rxiv/rxiv.1) for
+Please see the [man page](http://eylles.github.com/rxiv/blob/master/rxiv.1) for
 information on how to use sxiv.
 
 
@@ -114,8 +115,8 @@ Only Pull Requests from topic branches will be accepted, please **DO NOT** open 
   * Added ICCCM WM_HINTS #[406](https://github.com/muennich/sxiv/pull/406)
   * Advertise Webp support in desktop file #[411](https://github.com/muennich/sxiv/pull/411)
   * add option for dmenu like behaviour #[405](https://github.com/muennich/sxiv/pull/405) flag `-O`
-  * added script rxiv-url to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
-  * added script rxiv-browser to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
+  * added script `rxiv-url` to view files from URLs issue #[431](https://github.com/muennich/sxiv/issues/431)
+  * added script `rxiv-browser` to provide start from file #[371](https://github.com/muennich/sxiv/pull/371)
   * added svg support (no thumbnail mode yet) #[440](https://github.com/muennich/sxiv/pull/440)
   * rename to rxiv
 
