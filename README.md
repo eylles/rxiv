@@ -27,11 +27,11 @@ Screenshots
 
 **Image mode:**
 
-![Image](https://github.com/eylles/rxiv/blob/master/img/image.png "Image mode")
+![Image](https://eylles.github.io/rxiv/img/image.png "Image mode")
 
 **Thumbnail mode:**
 
-![Thumb](https://github.com/eylles/rxiv/blob/master/img/thumb.png "Thumb mode")
+![Thumb](https://eylles.github.io/rxiv/img/thumb.png "Thumb mode")
 
 showcasing the optional inverted bar colors with flag `-B`
 
@@ -83,7 +83,7 @@ the following command:
 Usage
 -----
 
-Please see the [man page](http://eylles.github.com/rxiv/blob/master/rxiv.1) for
+Please see the [man page](https://eylles.github.io/rxiv/rxiv.1.html) for
 information on how to use sxiv.
 
 
