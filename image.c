@@ -714,13 +714,7 @@ bool img_fit(img_t *img)
 	}
 	z = MIN(z, img->scalemode == SCALE_DOWN ? 1.0 : zoom_max);
 
-	if (zoomdiff(img, z) != 0) {
-		img->zoom = z;
-		img->dirty = true;
-		return true;
-	} else {
-		return false;
-	}
+	return img_zoom(img, z);
 }
 
 void img_render(img_t *img)
