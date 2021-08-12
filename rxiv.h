@@ -45,6 +45,8 @@
 
 #define STREQ(s1,s2) (strcmp((s1), (s2)) == 0)
 
+#define BASENAME(s) (strrchr((s), '/') + 1)
+
 #define TV_DIFF(t1,t2) (((t1)->tv_sec  - (t2)->tv_sec ) * 1000 + \
                         ((t1)->tv_usec - (t2)->tv_usec) / 1000)
 

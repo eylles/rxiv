@@ -259,8 +259,6 @@ void win_open(win_t *win)
 	}
 	free(icon_data);
 
-	win_set_title(win, "rxiv");
-
 	classhint.res_class = RES_CLASS;
 	classhint.res_name = options->res_name != NULL ? options->res_name : "rxiv";
 	XSetClassHint(e->dpy, win->xwin, &classhint);
@@ -478,8 +476,16 @@ void win_draw_rect(win_t *win, int x, int y, int w, int h, bool fill, int lw,
 
 void win_set_title(win_t *win, const char *title)
 {
-	XStoreName(win->env.dpy, win->xwin, title);
-	XSetIconName(win->env.dpy, win->xwin, title);
+	static bool first_time = true;
+	/* Return if window is not ready yet, otherwise we get an X fault. */
+	if (win->xwin == None)
+		return;
+
+	if (first_time) {
+		XStoreName(win->env.dpy, win->xwin, title);
+		XSetIconName(win->env.dpy, win->xwin, title);
+		first_time = false;
+	}
 
 	XChangeProperty(win->env.dpy, win->xwin, atoms[ATOM__NET_WM_NAME],
 	                XInternAtom(win->env.dpy, "UTF8_STRING", False), 8,
