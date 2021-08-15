@@ -105,6 +105,11 @@ Only Pull Requests from topic branches will be accepted, please **DO NOT** open 
 **Stable releases**
 
 **rxiv**
+(Aug, 2021)
+  * loop patch from https://github.com/1-7-1/sxiv-loop-patch
+  * added more zoom steps to default #[13](https://github.com/eylles/rxiv/pull/13)
+  * fixes (#12) - issue with zoom
+  * bar text and background separated into their own resources, `-B` flag removed
 
 **[v0.0.1](https://github.com/eylles/rxiv/archive/v0.0.1.tar.gz)**
 (*May, 2021*)
