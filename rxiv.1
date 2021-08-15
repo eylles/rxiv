@@ -3,7 +3,7 @@
 rxiv \- Reisen X Image Viewer
 .SH SYNOPSIS
 .B rxiv
-.RB [ \-abBcfhiopqrtvZ ]
+.RB [ \-abcfhiopqrtvZ ]
 .RB [ \-A
 .IR FRAMERATE ]
 .RB [ \-e
@@ -69,9 +69,6 @@ Play animations of multi-frame images.
 .TP
 .B \-b
 Do not show info bar on bottom of window.
-.TP
-.B \-B
-Invert the colors of the bar.
 .TP
 .B \-c
 Remove all orphaned cache files from the thumbnail cache directory and exit.
@@ -415,10 +412,16 @@ Zoom out.
 The following X resources are supported:
 .TP
 .B background
-Color of the window background and bar foreground
+Color of the window background
 .TP
 .B foreground
-Color of the window foreground and bar background
+Color of the window foreground
+.TP
+.B bar.background
+Color of the bar background, if not set defaults to window foreground
+.TP
+.B bar.foreground
+Color of the bar foreground, if not set defaults to window background
 .TP
 .B font
 Name of Xft bar font

@@ -286,7 +286,6 @@ struct opt {
 	/* window: */
 	bool fullscreen;
 	bool hide_bar;
-	bool swap_bar;
 	long embed;
 	char *geometry;
 	char *res_name;
@@ -421,6 +420,8 @@ struct win {
 
 	XftColor bg;
 	XftColor fg;
+	XftColor bbg;
+	XftColor bfg;
 
 	int x;
 	int y;

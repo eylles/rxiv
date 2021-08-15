@@ -30,7 +30,7 @@ const opt_t *options = (const opt_t*) &_options;
 
 void print_usage(void)
 {
-	printf("usage: rxiv [-abBcfhioOpqrtvZ] [-A FRAMERATE] [-e WID] [-G GAMMA] "
+	printf("usage: rxiv [-abcfhioOpqrtvZ] [-A FRAMERATE] [-e WID] [-G GAMMA] "
 	       "[-g GEOMETRY] [-N NAME] [-n NUM] [-S DELAY] [-s MODE] [-z ZOOM] "
 	       "FILES...\n");
 }
@@ -65,7 +65,6 @@ void parse_options(int argc, char **argv)
 	_options.fullscreen = false;
 	_options.embed = 0;
 	_options.hide_bar = false;
-	_options.swap_bar = false;
 	_options.geometry = NULL;
 	_options.res_name = NULL;
 
@@ -74,7 +73,7 @@ void parse_options(int argc, char **argv)
 	_options.clean_cache = false;
 	_options.private_mode = false;
 
-	while ((opt = getopt(argc, argv, "A:abBce:fG:g:hin:N:oOpqrS:s:tvZz:")) != -1) {
+	while ((opt = getopt(argc, argv, "A:abce:fG:g:hin:N:oOpqrS:s:tvZz:")) != -1) {
 		switch (opt) {
 			case '?':
 				print_usage();
@@ -93,9 +92,6 @@ void parse_options(int argc, char **argv)
 				break;
 			case 'c':
 				_options.clean_cache = true;
-				break;
-			case 'B':
-				_options.swap_bar = true;
 				break;
 			case 'e':
 				n = strtol(optarg, &end, 0);
