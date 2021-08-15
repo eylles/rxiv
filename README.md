@@ -1,8 +1,8 @@
-![rxiv](https://github.com/eylles/rxiv/blob/master/icon/128x128.png "sxiv")
+![rxiv](https://github.com/eylles/rxiv/blob/master/icon/128x128.png "rxiv")
 
 **Reisen X Image Viewer**
 
-The sole purpose of rxiv is because sxiv won't add many sensible features and overall a strict suckless philosophy limits software extensibility.
+The sole purpose of rxiv is because sxiv won't add many sensible features and it seems abandoned by the author.
 
 Reisen X Image Viewer is named after Reisen Udongein Inaba from Touhou.
 
@@ -105,10 +105,11 @@ Only Pull Requests from topic branches will be accepted, please **DO NOT** open 
 **Stable releases**
 
 **rxiv**
+
 (Aug, 2021)
   * loop patch from https://github.com/1-7-1/sxiv-loop-patch
   * added more zoom steps to default #[13](https://github.com/eylles/rxiv/pull/13)
-  * fixes (#12) - issue with zoom
+  * fixes #[12](https://github.com/eylles/rxiv/issues/12) - issue with zoom
   * bar text and background separated into their own resources, `-B` flag removed
 
 **[v0.0.1](https://github.com/eylles/rxiv/archive/v0.0.1.tar.gz)**
