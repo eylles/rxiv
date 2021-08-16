@@ -20,6 +20,8 @@ Features
 * Start from file (through included wrapper `rxiv-browser` for now)
 * Partial svg support (only on image mode for now)
 * Display image information in status bar
+* Configurable title
+* Configurable bar colors
 
 
 Screenshots
@@ -33,7 +35,6 @@ Screenshots
 
 ![Thumb](https://eylles.github.io/rxiv/img/thumb.png "Thumb mode")
 
-showcasing the optional inverted bar colors with flag `-B`
 
 
 Dependencies
@@ -49,6 +50,7 @@ sxiv requires the following software to be installed:
   * librsvg2
   * giflib (optional, disabled with `HAVE_GIFLIB=0`)
   * libexif (optional, disabled with `HAVE_LIBEXIF=0`)
+  * libgen
 
 Please make sure to install the corresponding development packages in case that
 you want to build rxiv on a distribution with separate runtime and development
@@ -111,6 +113,7 @@ Only Pull Requests from topic branches will be accepted, please **DO NOT** open 
   * added more zoom steps to default #[13](https://github.com/eylles/rxiv/pull/13)
   * fixes #[12](https://github.com/eylles/rxiv/issues/12) - issue with zoom
   * bar text and background separated into their own resources, `-B` flag removed
+  * confifurable title prefix and suffix #[453](https://github.com/muennich/sxiv/pull/453)
 
 **[v0.0.1](https://github.com/eylles/rxiv/archive/v0.0.1.tar.gz)**
 (*May, 2021*)
