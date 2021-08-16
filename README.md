@@ -17,7 +17,7 @@ Features
 * Load all frames from GIF files and play GIF animations
 * Full webp support
 * View images from URL (through included wrapper `rxiv-url` for now)
-* Start from file (through included wrapper `rxiv-browser` for now)
+* Start from file
 * Partial svg support (only on image mode for now)
 * Display image information in status bar
 * Configurable title
@@ -114,6 +114,7 @@ Only Pull Requests from topic branches will be accepted, please **DO NOT** open 
   * fixes #[12](https://github.com/eylles/rxiv/issues/12) - issue with zoom
   * bar text and background separated into their own resources, `-B` flag removed
   * confifurable title prefix and suffix #[453](https://github.com/muennich/sxiv/pull/453)
+  * proper start from file with `-d` flag, script `rxiv-browser` removed
 
 **[v0.0.1](https://github.com/eylles/rxiv/archive/v0.0.1.tar.gz)**
 (*May, 2021*)
