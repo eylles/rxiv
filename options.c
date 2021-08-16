@@ -30,7 +30,7 @@ const opt_t *options = (const opt_t*) &_options;
 
 void print_usage(void)
 {
-	printf("usage: rxiv [-abcfhioOpqrtvZ] [-A FRAMERATE] [-e WID] [-G GAMMA] "
+	printf("usage: rxiv [-abcdfhioOpqrtvZ] [-A FRAMERATE] [-e WID] [-G GAMMA] "
 	       "[-g GEOMETRY] [-N NAME] [-n NUM] [-S DELAY] [-s MODE] [-z ZOOM] "
 	       "FILES...\n");
 }
@@ -54,6 +54,7 @@ void parse_options(int argc, char **argv)
 	_options.like_dmenu = false;
 	_options.recursive = false;
 	_options.startnum = 0;
+	_options.loaddir = false;
 
 	_options.scalemode = SCALE_DOWN;
 	_options.zoom = 1.0;
@@ -73,7 +74,7 @@ void parse_options(int argc, char **argv)
 	_options.clean_cache = false;
 	_options.private_mode = false;
 
-	while ((opt = getopt(argc, argv, "A:abce:fG:g:hin:N:oOpqrS:s:tvZz:")) != -1) {
+	while ((opt = getopt(argc, argv, "A:abcde:fG:g:hin:N:oOpqrS:s:tvZz:")) != -1) {
 		switch (opt) {
 			case '?':
 				print_usage();
@@ -92,6 +93,11 @@ void parse_options(int argc, char **argv)
 				break;
 			case 'c':
 				_options.clean_cache = true;
+				break;
+			case 'd':
+				if (_options.startnum != 0)
+					error(EXIT_FAILURE, 0, "-d and -n cannot be set together", optarg);
+				_options.loaddir = true;
 				break;
 			case 'e':
 				n = strtol(optarg, &end, 0);
@@ -118,6 +124,8 @@ void parse_options(int argc, char **argv)
 				_options.from_stdin = true;
 				break;
 			case 'n':
+				if (_options.loaddir)
+					error(EXIT_FAILURE, 0, "-d and -n cannot be set together", optarg);
 				n = strtol(optarg, &end, 0);
 				if (*end != '\0' || n <= 0)
 					error(EXIT_FAILURE, 0, "Invalid argument for option -n: %s", optarg);
