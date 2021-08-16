@@ -3,7 +3,7 @@
 rxiv \- Reisen X Image Viewer
 .SH SYNOPSIS
 .B rxiv
-.RB [ \-abcfhiopqrtvZ ]
+.RB [ \-abcdfhiopqrtvZ ]
 .RB [ \-A
 .IR FRAMERATE ]
 .RB [ \-e
@@ -72,6 +72,10 @@ Do not show info bar on bottom of window.
 .TP
 .B \-c
 Remove all orphaned cache files from the thumbnail cache directory and exit.
+.TP
+.B \-d
+Open image and all images on it's parent dir, cannot be combined with
+.B \-n
 .TP
 .BI "\-e " WID
 Embed rxiv's window into window whose ID is
