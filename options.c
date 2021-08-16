@@ -137,9 +137,9 @@ void parse_options(int argc, char **argv)
 			case 'o':
 				_options.to_stdout = true;
 				break;
-            case 'O':
-                _options.like_dmenu = true;
-                break;
+			case 'O':
+				_options.like_dmenu = true;
+				break;
 			case 'p':
 				_options.private_mode = true;
 				break;
