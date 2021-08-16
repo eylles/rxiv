@@ -78,9 +78,6 @@ install: all
 	@echo "INSTALL bin/rxiv-url"
 	cp scripts/rxiv-url $(DESTDIR)$(PREFIX)/bin/
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/rxiv-url
-	@echo "INSTALL bin/rxiv-browser"
-	cp scripts/rxiv-browser $(DESTDIR)$(PREFIX)/bin/
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/rxiv-browser
 	cp rxiv.desktop /usr/share/applications/
 	@echo "INSTALL rxiv.1"
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
@@ -98,8 +95,6 @@ uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv
 	@echo "REMOVE bin/rxiv-url"
 	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv-url
-	@echo "REMOVE bin/rxiv-browser"
-	rm -f $(DESTDIR)$(PREFIX)/bin/rxiv-browser
 	@echo "REMOVE rxiv.1"
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/rxiv.1
 	@echo "REMOVE share/rxiv/"
