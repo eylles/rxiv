@@ -40,7 +40,7 @@ Screenshots
 Dependencies
 ------------
 
-sxiv requires the following software to be installed:
+rxiv requires the following software to be installed:
 
   * Imlib2
   * X11
@@ -86,7 +86,7 @@ Usage
 -----
 
 Please see the [man page](https://eylles.github.io/rxiv/rxiv.1.html) for
-information on how to use sxiv.
+information on how to use rxiv.
 
 
 Download & Changelog
@@ -101,13 +101,14 @@ on GitHub or get a copy using git with the following command:
 **Contribution**
 ------------
 
-Only Pull Requests from topic branches will be accepted, please **DO NOT** open a PR from **your** master branch.
+Only Pull Requests from topic branches will be accepted, please **DO NOT** open a PR from **your** master branch. (or not, i the PR is good i'm taking it regardless)
 
 
 **Stable releases**
 
 **rxiv**
 
+**[v0.1.0](https://github.com/eylles/rxiv/archive/v0.1.0.tar.gz)**
 (Aug, 2021)
   * loop patch from https://github.com/1-7-1/sxiv-loop-patch
   * added more zoom steps to default #[13](https://github.com/eylles/rxiv/pull/13)
