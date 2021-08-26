@@ -2,8 +2,8 @@
 get_image(){
 for i in "$@"; do
     name=$(echo "$i" | sed "s/.*\///")
-    curl -sL "$i" > "/tmp/${name}"
-    files=$files" /tmp/${name}"
+    curl -sL "$i" > "/tmp/${name}" &&
+        files=$files" /tmp/${name}"
 done
 }
 case "$1" in
