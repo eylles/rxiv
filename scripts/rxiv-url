@@ -6,6 +6,12 @@ for i in "$@"; do
         files=$files" /tmp/${name}"
 done
 }
+
+cleanup() {
+  rm -f $files
+}
+
+trap cleanup HUP INT QUIT ABRT TERM
 case "$1" in
     -*)
         args=${1}
@@ -23,3 +29,4 @@ case "$1" in
         printf "error no url nor option\\n" ; exit 1
     ;;
 esac
+cleanup
