@@ -101,7 +101,7 @@ on GitHub or get a copy using git with the following command:
 **Contribution**
 ------------
 
-Only Pull Requests from topic branches will be accepted, please **DO NOT** open a PR from **your** master branch. (or not, i the PR is good i'm taking it regardless)
+Only Pull Requests from topic branches will be accepted, please **DO NOT** open a PR from **your** master branch. (or not, if the PR is good i'm taking it regardless)
 
 
 **Stable releases**
