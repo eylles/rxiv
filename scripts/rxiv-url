@@ -1,14 +1,17 @@
 #!/bin/sh
+cache_dir="/tmp/rxiv"
+
 get_image(){
+[ -d "$cache_dir" ] || mkdir -p "$cache_dir" || exit 1
 for i in "$@"; do
     name=${i##*/}
-    curl -sL "$i" > "/tmp/${name}" &&
-        files=$files" /tmp/${name}"
+    curl -sL "$i" > "$cache_dir/$name" &&
+        files="$files $cache_dir/$name"
 done
 }
 
 cleanup() {
-  rm -f $files
+  rm -f "$cache_dir"/*
 }
 
 trap cleanup HUP INT QUIT ABRT TERM
