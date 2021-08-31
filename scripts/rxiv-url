@@ -14,7 +14,7 @@ cleanup() {
   rm -f "$cache_dir"/*
 }
 
-trap cleanup HUP INT QUIT ABRT TERM
+trap cleanup EXIT
 case "$1" in
     -*)
         args=${1}
@@ -32,4 +32,3 @@ case "$1" in
         printf "error no url nor option\\n" ; exit 1
     ;;
 esac
-cleanup
