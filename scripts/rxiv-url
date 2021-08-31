@@ -15,20 +15,14 @@ cleanup() {
 }
 
 trap cleanup EXIT
-case "$1" in
-    -*)
-        args=${1}
-        shift 1
-        # shellcheck disable=2086
-        get_image "$@" &&  rxiv $args $files
-    ;;
+while [ -n "$1" ]; do
+    case "$1" in
+        -*) args="${args} $1" ;;
+        *http*://*.*) urls="${urls} $1" ;;
+        *) echo "error no url nor option" > /dev/stderr ; exit 1 ;;
+    esac
+    shift
+done
 
-    *http*)
-        # shellcheck disable=2086
-        get_image "$@" &&  rxiv $files
-    ;;
-
-    *)
-        printf "error no url nor option\\n" ; exit 1
-    ;;
-esac
+[ -n "$urls" ] || exit 1
+get_image "$urls" && rxiv "$cache_dir"
