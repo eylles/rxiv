@@ -25,4 +25,4 @@ while [ -n "$1" ]; do
 done
 
 [ -n "$urls" ] || exit 1
-get_image $urls && sxiv $args "$cache_dir"
+get_image $urls && rxiv $args "$cache_dir"
