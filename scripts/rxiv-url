@@ -16,13 +16,30 @@ cleanup() {
 
 trap cleanup EXIT
 while [ -n "$1" ]; do
-    case "$1" in
-        -*) args="${args} $1" ;;
-        *http*://*.*) urls="${urls} $1" ;;
-        *) echo "error no url nor option" > /dev/stderr ; exit 1 ;;
-    esac
-    shift
+  case "$1" in
+    -*)
+      case "$1" in 
+        "-A"|"-e"|"-G"|"-g"|"-N"|"-n"|\
+        "-S"|"-s"|"-z") args="$args $1 $2"; shift ;;
+        -d) ;;
+        *)args="${args} $1" ;;
+      esac
+      ;;
+    *http*://*.*) urls="${urls} $1" ;;
+    *) echo "error no url nor option" > /dev/stderr ; exit 1 ;;
+  esac
+  shift
 done
+
+remov_d() {
+  befor_d="${1%%d*}"
+  after_d="${1##*d}"
+  result="$befor_d""$after_d"
+  [ "$result" = "-" ] && result=""
+  echo "$result"
+}
+
+args="$(remov_d "${args}")"
 
 [ -n "$urls" ] || exit 1
 get_image $urls && rxiv $args "$cache_dir"
