@@ -14,22 +14,32 @@ cleanup() {
   rm -f "$cache_dir"/*
 }
 
-trap cleanup HUP INT QUIT ABRT TERM
-case "$1" in
+trap cleanup EXIT
+while [ -n "$1" ]; do
+  case "$1" in
     -*)
-        args=${1}
-        shift 1
-        # shellcheck disable=2086
-        get_image "$@" &&  rxiv $args $files
-    ;;
+      case "$1" in 
+        "-A"|"-e"|"-G"|"-g"|"-N"|"-n"|\
+        "-S"|"-s"|"-z") args="$args $1 $2"; shift ;;
+        -d) ;;
+        *)args="${args} $1" ;;
+      esac
+      ;;
+    *http*://*.*) urls="${urls} $1" ;;
+    *) echo "error no url nor option" > /dev/stderr ; exit 1 ;;
+  esac
+  shift
+done
 
-    *http*)
-        # shellcheck disable=2086
-        get_image "$@" &&  rxiv $files
-    ;;
+remov_d() {
+  befor_d="${1%%d*}"
+  after_d="${1##*d}"
+  result="$befor_d""$after_d"
+  [ "$result" = "-" ] && result=""
+  echo "$result"
+}
 
-    *)
-        printf "error no url nor option\\n" ; exit 1
-    ;;
-esac
-cleanup
+args="$(remov_d "${args}")"
+
+[ -n "$urls" ] || exit 1
+get_image $urls && rxiv $args "$cache_dir"
