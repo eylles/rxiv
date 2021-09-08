@@ -50,8 +50,8 @@ rxiv requires the following software to be installed:
   * librsvg2
   * giflib (optional, disabled with `HAVE_GIFLIB=0`)
   * libexif (optional, disabled with `HAVE_LIBEXIF=0`)
+  * libwebp (optional, disabled with `HAVE_LIBWEBP=0`)
   * libgen
-  * libwebp
 
 Please make sure to install the corresponding development packages in case that
 you want to build rxiv on a distribution with separate runtime and development
