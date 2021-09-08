@@ -3,3 +3,5 @@ version.h
 *.d
 *.o
 rxiv
+.cache
+compile_commands.json

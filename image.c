@@ -532,6 +532,12 @@ svg_t img_open_svg(const fileinfo_t *file) {
 }
 
 bool img_load_svg(img_t *img, float z) {
+
+    if (img->im != NULL) {
+        imlib_context_set_image(img->im);
+        imlib_free_image();
+    }
+
 	img->svg.viewbox.height = img->svg.size.height * z;
 	img->svg.viewbox.width = img->svg.size.width * z;
 
@@ -557,7 +563,6 @@ bool img_load_svg(img_t *img, float z) {
 
 	cairo_surface_destroy(surface);
 	cairo_destroy(cr);
-
 	return true;
 }
 /* HAVE_LIBRSVG */
